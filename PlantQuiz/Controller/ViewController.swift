@@ -15,15 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonB: UIButton!
     @IBOutlet weak var plantImage: UIImageView!
     
-    var timer = Timer()
     
-    let quiz = [
-        Question(text: "Is it a Cladina Arbuscula?", answer: "True", image: "arbuscula"),
-        Question(text: "Is it a Cladina stellaris?", answer: "False", image: "stellaris"),
-        Question(text: "Is it a Cladina rangiferia?", answer: "True", image: "rangiferia"),
-        Question(text: "Is it a Peltigera canina?", answer: "True", image: "canina"),
-    ]
-    var questionNumber = 0
+    var quizBrain = QuizBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +24,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        let userAnswer = sender.currentTitle!
-        let realAnswer = quiz[questionNumber].answer
         
-        if (userAnswer==realAnswer) {
+        if quizBrain.checkAnswer(sender.currentTitle!) {
             sender.backgroundColor = .green
         } else {
             sender.backgroundColor = .red
         }
-      
-        if (questionNumber + 1==quiz.count) {
-            questionNumber = 0
-        }
-        else {
-            questionNumber += 1
-        }
+        
+        
+        quizBrain.nextQuestion()
         
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -54,9 +41,12 @@ class ViewController: UIViewController {
     @objc func updateUI() {
         buttonA.backgroundColor = .clear
         buttonB.backgroundColor = .clear
-        questionLabel.text = quiz[questionNumber].text
-        plantImage.image = UIImage(named: quiz[questionNumber].image)
-        progressBar.progress = Float(questionNumber + 1) / Float(quiz.count)
+        
+        
+        // get data from Model
+        questionLabel.text = quizBrain.getQuestion()
+        plantImage.image = UIImage(named: quizBrain.getImageName())
+        progressBar.progress = quizBrain.getProgress()
     }
 
 }

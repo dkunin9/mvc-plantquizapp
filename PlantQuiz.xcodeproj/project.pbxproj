@@ -60,8 +60,7 @@
 		6555387A25D44CB700A62FDC /* PlantQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				6555387B25D44CB700A62FDC /* AppDelegate.swift */,
-				6555387D25D44CB700A62FDC /* SceneDelegate.swift */,
+				659C4A8E25D47A2A006ED2CC /* App */,
 				659C4A8825D469B2006ED2CC /* Model */,
 				659C4A8625D4699A006ED2CC /* View */,
 				659C4A8725D4699E006ED2CC /* Controller */,
@@ -95,6 +94,15 @@
 				659C4A8A25D46EA8006ED2CC /* QuizBrain.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		659C4A8E25D47A2A006ED2CC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6555387B25D44CB700A62FDC /* AppDelegate.swift */,
+				6555387D25D44CB700A62FDC /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

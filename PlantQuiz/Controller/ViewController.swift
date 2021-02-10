@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Weak variables
+    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var buttonA: UIButton!
@@ -17,6 +19,8 @@ class ViewController: UIViewController {
     
     
     var quizBrain = QuizBrain()
+    
+    // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +35,7 @@ class ViewController: UIViewController {
             sender.backgroundColor = .red
         }
         
-        
         quizBrain.nextQuestion()
-        
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
@@ -43,7 +45,9 @@ class ViewController: UIViewController {
         buttonB.backgroundColor = .clear
         
         
-        // get data from Model
+        /*
+         get data from Model
+         */
         questionLabel.text = quizBrain.getQuestion()
         plantImage.image = UIImage(named: quizBrain.getImageName())
         progressBar.progress = quizBrain.getProgress()

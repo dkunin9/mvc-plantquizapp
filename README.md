@@ -1,5 +1,5 @@
 <p align="center">  
-iOS app quiz for plants
+iOS quiz app for plants
 </p>
 
 

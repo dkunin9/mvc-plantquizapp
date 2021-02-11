@@ -10,36 +10,50 @@ import Foundation
 struct QuizBrain {
     
     let quiz = [
-        Question(text: "Is it a Cladina Arbuscula?", answer: "True", image: "arbuscula"),
-        Question(text: "Is it a Cladina stellaris?", answer: "False", image: "stellaris"),
-        Question(text: "Is it a Cladina rangiferia?", answer: "True", image: "rangiferia"),
-        Question(text: "Is it a Peltigera canina?", answer: "True", image: "canina"),
+        Question(qa: "Apple", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
+        Question(qa: "Mickey Mouse", qb: "Brad Pitt", qc: "Joshua Dunn", qd: "stellaris", answer: "stellaris", image: "stellaris"),
+        Question(qa: "Android", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
+        Question(qa: "arbuscula", qb: "rangiferia", qc: "orbuscila", qd: "arbuscula", answer: "rangiferia", image: "rangiferia"),
+        Question(qa: "arbuscula", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
+        Question(qa: "Apple", qb: "Brad Pitt", qc: "arbuscula", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
+        Question(qa: "iOS", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "canina", image: "canina"),
+        Question(qa: "Mickey Mouse", qb: "arbuscula", qc: "rangiferia", qd: "arbuscula", answer: "rangiferia", image: "rangiferia"),
+        Question(qa: "Apple", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
+        Question(qa: "Apple", qb: "Brad Pitt", qc: "stellaris", qd: "arbuscula", answer: "stellaris", image: "stellaris"),
+        Question(qa: "Apple", qb: "Brad Pitt", qc: "arbuscula", qd: "arbusculo", answer: "arbuscula", image: "arbuscula"),
+        Question(qa: "Apple", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "canina", image: "canina"),
     ]
     var questionNumber = 0
+    var correctQuestions = 0.0
     
-    func checkAnswer(_ userAnswer: String) -> Bool {
+    
+    func getQuestion() -> [String] {
+        return [quiz[questionNumber].qa, quiz[questionNumber].qb, quiz[questionNumber].qc, quiz[questionNumber].qd]
+    }
+    
+    func getProgress() -> Float {
+        return Float(questionNumber + 1) / Float(quiz.count)
+    }
+    func getImageName() -> String {
+        return quiz[questionNumber].image
+    }
+    func getScore() -> Double {
+        return correctQuestions
+    }
+    
+    mutating func checkAnswer(_ userAnswer: String) -> Bool {
         if userAnswer == quiz[questionNumber].answer {
+            correctQuestions += 1.0
             return true
         } else {
             return false
         }
     }
     
-    func getProgress() -> Float {
-        return Float(questionNumber + 1) / Float(quiz.count)
-    }
-    
-    func getQuestion() -> String {
-        return quiz[questionNumber].text
-    }
-    
-    func getImageName() -> String {
-        return quiz[questionNumber].image
-    }
-    
     mutating func nextQuestion () {
         if (questionNumber + 1==quiz.count) {
             questionNumber = 0
+            correctQuestions = 0
         }
         else {
             questionNumber += 1

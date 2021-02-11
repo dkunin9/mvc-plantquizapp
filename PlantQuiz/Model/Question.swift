@@ -8,13 +8,19 @@
 import Foundation
 
 struct Question {
-    let text: String
+    let qa: String
+    let qb: String
+    let qc: String
+    let qd: String
     let answer: String
     let image: String
     
-    init(text: String, answer: String, image: String) {
-        self.text=text
-        self.answer=answer
-        self.image=image
+    init(qa: String, qb: String, qc: String, qd: String, answer: String, image: String) {
+        self.qa = qa
+        self.qb = qb
+        self.qc = qc
+        self.qd = qd
+        self.answer = answer
+        self.image = image
     }
 }

@@ -10,12 +10,14 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: - Weak variables
-    
-    @IBOutlet weak var questionLabel: UILabel!
+
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var buttonA: UIButton!
     @IBOutlet weak var buttonB: UIButton!
+    @IBOutlet weak var buttonC: UIButton!
+    @IBOutlet weak var buttonD: UIButton!
     @IBOutlet weak var plantImage: UIImageView!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     
     var quizBrain = QuizBrain()
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
+        // Correct / Wrong answer color manage
         if quizBrain.checkAnswer(sender.currentTitle!) {
             sender.backgroundColor = .green
         } else {
@@ -37,20 +40,28 @@ class ViewController: UIViewController {
         
         quizBrain.nextQuestion()
         
+        
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
     @objc func updateUI() {
+        
+        // Set color back to default
         buttonA.backgroundColor = .clear
         buttonB.backgroundColor = .clear
-        
+        buttonC.backgroundColor = .clear
+        buttonD.backgroundColor = .clear
+        buttonA.setTitle(quizBrain.getQuestion()[0], for: .normal)
+        buttonB.setTitle(quizBrain.getQuestion()[1], for: .normal)
+        buttonC.setTitle(quizBrain.getQuestion()[2], for: .normal)
+        buttonD.setTitle(quizBrain.getQuestion()[3], for: .normal)
         
         /*
          get data from Model
          */
-        questionLabel.text = quizBrain.getQuestion()
         plantImage.image = UIImage(named: quizBrain.getImageName())
         progressBar.progress = quizBrain.getProgress()
+        scoreLabel.text = String(quizBrain.getScore())
     }
 
 }

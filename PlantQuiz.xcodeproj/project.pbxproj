@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4374E9DB8C4D7ECAFB9E4301 /* Pods_PlantQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3873EA5EEB2222196C989BE1 /* Pods_PlantQuiz.framework */; };
 		650A69AA25D57413003A7604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650A69A925D57413003A7604 /* Main.storyboard */; };
+		650A69B225D57E49003A7604 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 650A69B125D57E49003A7604 /* README.md */; };
 		6555387C25D44CB700A62FDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6555387B25D44CB700A62FDC /* AppDelegate.swift */; };
 		6555387E25D44CB700A62FDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6555387D25D44CB700A62FDC /* SceneDelegate.swift */; };
 		6555388025D44CB700A62FDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6555387F25D44CB700A62FDC /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		3873EA5EEB2222196C989BE1 /* Pods_PlantQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		650A69A925D57413003A7604 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		650A69B125D57E49003A7604 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6555387825D44CB700A62FDC /* PlantQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6555387B25D44CB700A62FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6555387D25D44CB700A62FDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				659C4A8725D4699E006ED2CC /* Controller */,
 				6555388425D44CB800A62FDC /* Assets.xcassets */,
 				6555388925D44CB800A62FDC /* Info.plist */,
+				650A69B125D57E49003A7604 /* README.md */,
 			);
 			path = PlantQuiz;
 			sourceTree = "<group>";
@@ -126,7 +129,6 @@
 				C6C14CF503169D66E4602D14 /* Pods-PlantQuiz.debug.xcconfig */,
 				916808F4C5EEF0E57EA33CDC /* Pods-PlantQuiz.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,6 +193,7 @@
 			files = (
 				6555388825D44CB800A62FDC /* LaunchScreen.storyboard in Resources */,
 				650A69AA25D57413003A7604 /* Main.storyboard in Resources */,
+				650A69B225D57E49003A7604 /* README.md in Resources */,
 				6555388525D44CB800A62FDC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

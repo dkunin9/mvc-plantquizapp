@@ -51,6 +51,7 @@
 		6555386F25D44CB700A62FDC = {
 			isa = PBXGroup;
 			children = (
+				650A69B125D57E49003A7604 /* README.md */,
 				6555387A25D44CB700A62FDC /* PlantQuiz */,
 				6555387925D44CB700A62FDC /* Products */,
 				CAE6FBD4BCD241B224D0F8B5 /* Pods */,
@@ -75,7 +76,6 @@
 				659C4A8725D4699E006ED2CC /* Controller */,
 				6555388425D44CB800A62FDC /* Assets.xcassets */,
 				6555388925D44CB800A62FDC /* Info.plist */,
-				650A69B125D57E49003A7604 /* README.md */,
 			);
 			path = PlantQuiz;
 			sourceTree = "<group>";

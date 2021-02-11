@@ -8,17 +8,17 @@
 import UIKit
 import SwiftyButton
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
 
     // MARK: - Weak variables
 
-    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var plantImage: UIImageView!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var buttonA: PressableButton!
     @IBOutlet weak var buttonB: PressableButton!
     @IBOutlet weak var buttonC: PressableButton!
     @IBOutlet weak var buttonD: PressableButton!
-    @IBOutlet weak var plantImage: UIImageView!
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     var quizBrain = QuizBrain()
     
@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        quizBrain.restart()
         updateUI()
     }
 
@@ -41,40 +42,45 @@ class ViewController: UIViewController {
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
+    
     @IBAction func restartButtonPressed(_ sender: UIButton) {
         quizBrain.restart()
         updateUI()
     }
     
     @objc func updateUI() {
-        
-        /*
-         prepare SwiftyButtons ;)
-         */
+        // prepare SwiftyButtons ;)
         buttonA.colors = .init(button: .cyan, shadow: .blue)
         buttonA.disabledColors = .init(button: .gray, shadow: .darkGray)
-        
+        buttonA.setTitle(quizBrain.getQuestion()[0], for: .normal)
         buttonB.colors = .init(button: .cyan, shadow: .blue)
         buttonB.disabledColors = .init(button: .gray, shadow: .darkGray)
-        
+        buttonB.setTitle(quizBrain.getQuestion()[1], for: .normal)
         buttonC.colors = .init(button: .cyan, shadow: .blue)
         buttonC.disabledColors = .init(button: .gray, shadow: .darkGray)
-        
+        buttonC.setTitle(quizBrain.getQuestion()[2], for: .normal)
         buttonD.colors = .init(button: .cyan, shadow: .blue)
         buttonD.disabledColors = .init(button: .gray, shadow: .darkGray)
-        
-        buttonA.setTitle(quizBrain.getQuestion()[0], for: .normal)
-        buttonB.setTitle(quizBrain.getQuestion()[1], for: .normal)
-        buttonC.setTitle(quizBrain.getQuestion()[2], for: .normal)
         buttonD.setTitle(quizBrain.getQuestion()[3], for: .normal)
-        
+
         plantImage.layer.borderWidth = 2
         
-        // Get data from Model
+        // Show data from Model
         plantImage.image = UIImage(named: quizBrain.getImageName())
         progressBar.setProgress(quizBrain.getProgress(), animated: true)
-        
         scoreLabel.text = String(quizBrain.getScore())
+        
+        // Change VC
+        if !quizBrain.getState() {
+            self.performSegue(withIdentifier: "openResult", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.quizBrain = quizBrain
+        }
     }
 
 }

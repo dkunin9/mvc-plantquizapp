@@ -9,7 +9,7 @@ import Foundation
 
 struct QuizBrain {
     
-    let quiz = [
+    var quiz = [
         Question(qa: "Apple", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
         Question(qa: "Mickey Mouse", qb: "Brad Pitt", qc: "Joshua Dunn", qd: "stellaris", answer: "stellaris", image: "stellaris"),
         Question(qa: "Android", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
@@ -25,12 +25,12 @@ struct QuizBrain {
     ]
     var questionNumber = 0
     var correctQuestions = 0.0
+    var quizActive = true
     
     
     func getQuestion() -> [String] {
         return [quiz[questionNumber].qa, quiz[questionNumber].qb, quiz[questionNumber].qc, quiz[questionNumber].qd]
     }
-    
     func getProgress() -> Float {
         return Float(questionNumber + 1) / Float(quiz.count)
     }
@@ -39,6 +39,9 @@ struct QuizBrain {
     }
     func getScore() -> Double {
         return correctQuestions
+    }
+    func getState() -> Bool {
+        return quizActive
     }
     
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
@@ -51,18 +54,18 @@ struct QuizBrain {
     }
     
     mutating func nextQuestion () {
-        if (questionNumber + 1==quiz.count) {
-            questionNumber = 0
-            correctQuestions = 0
-        }
-        else {
+        if (questionNumber + 1 != quiz.count) {
             questionNumber += 1
+        }
+        if (questionNumber + 1 == quiz.count) {
+            quizActive = false
         }
     }
     
     mutating func restart () {
         correctQuestions = 0
         questionNumber = 0
+        quizActive = true
+        quiz.shuffle()
     }
-    
 }

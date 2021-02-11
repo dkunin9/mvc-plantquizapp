@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         buttonC.setTitle(quizBrain.getQuestion()[2], for: .normal)
         buttonD.setTitle(quizBrain.getQuestion()[3], for: .normal)
         
-        plantImage.layer.borderWidth = 3
+        plantImage.layer.borderWidth = 2
         
         // Get data from Model
         plantImage.image = UIImage(named: quizBrain.getImageName())

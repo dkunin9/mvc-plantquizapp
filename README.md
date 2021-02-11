@@ -1,6 +1,6 @@
 # mvc-plantquizapp
 
-simple iOS Quiz app for plants
+iOS app quiz for plants
 
 ### Running
 
@@ -22,4 +22,3 @@ pod install
 ### Pods used
 
 * [SwiftyButton](https://github.com/TakeScoop/SwiftyButton)
-

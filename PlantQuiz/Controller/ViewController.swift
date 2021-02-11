@@ -70,11 +70,10 @@ class ViewController: UIViewController {
         
         plantImage.layer.borderWidth = 3
         
-        /*
-         get data from Model
-         */
+        // Get data from Model
         plantImage.image = UIImage(named: quizBrain.getImageName())
-        progressBar.progress = quizBrain.getProgress()
+        progressBar.setProgress(quizBrain.getProgress(), animated: true)
+        
         scoreLabel.text = String(quizBrain.getScore())
     }
 

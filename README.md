@@ -1,8 +1,27 @@
-# mvc-plantquizapp
-
+<p align="center">  
 iOS app quiz for plants
+</p>
 
-### Running
+
+## App Features
+
+* Guess the plant by image
+* Restart the quiz
+
+
+## Technologies
+
+* MVC design pattern
+* CocoaPods dependency manager
+* Storyboards with segues
+
+
+## Pods used
+
+* [SwiftyButton](https://github.com/TakeScoop/SwiftyButton)
+
+
+## Running
 
 Step 1:
 ```
@@ -13,12 +32,3 @@ Step 2:
 ```
 pod install
 ```
-
-### Features
-
-* Guess the plant by image
-* Restart the quiz
-
-### Pods used
-
-* [SwiftyButton](https://github.com/TakeScoop/SwiftyButton)

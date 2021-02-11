@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    
     var quizBrain = QuizBrain()
     
     // MARK: View Life Cycle
@@ -31,8 +30,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: PressableButton) {
-        
-        // Correct / Wrong answer color manage
+        // Correct or Wrong answer color manage
         if quizBrain.checkAnswer(sender.currentTitle!) {
             sender.colors = .init(button: .green, shadow: .green)
         } else {
@@ -41,8 +39,11 @@ class ViewController: UIViewController {
         
         quizBrain.nextQuestion()
         
-        
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+    }
+    @IBAction func restartButtonPressed(_ sender: UIButton) {
+        quizBrain.restart()
+        updateUI()
     }
     
     @objc func updateUI() {
@@ -66,7 +67,6 @@ class ViewController: UIViewController {
         buttonB.setTitle(quizBrain.getQuestion()[1], for: .normal)
         buttonC.setTitle(quizBrain.getQuestion()[2], for: .normal)
         buttonD.setTitle(quizBrain.getQuestion()[3], for: .normal)
-        
         
         plantImage.layer.borderWidth = 3
         

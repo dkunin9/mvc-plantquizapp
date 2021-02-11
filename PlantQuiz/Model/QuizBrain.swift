@@ -59,4 +59,10 @@ struct QuizBrain {
             questionNumber += 1
         }
     }
+    
+    mutating func restart () {
+        correctQuestions = 0
+        questionNumber = 0
+    }
+    
 }

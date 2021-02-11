@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import SwiftyButton
 
 class ViewController: UIViewController {
 
     // MARK: - Weak variables
 
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var buttonA: UIButton!
-    @IBOutlet weak var buttonB: UIButton!
-    @IBOutlet weak var buttonC: UIButton!
-    @IBOutlet weak var buttonD: UIButton!
+    @IBOutlet weak var buttonA: PressableButton!
+    @IBOutlet weak var buttonB: PressableButton!
+    @IBOutlet weak var buttonC: PressableButton!
+    @IBOutlet weak var buttonD: PressableButton!
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -29,13 +30,13 @@ class ViewController: UIViewController {
         updateUI()
     }
 
-    @IBAction func answerButtonPressed(_ sender: UIButton) {
+    @IBAction func answerButtonPressed(_ sender: PressableButton) {
         
         // Correct / Wrong answer color manage
         if quizBrain.checkAnswer(sender.currentTitle!) {
-            sender.backgroundColor = .green
+            sender.colors = .init(button: .green, shadow: .green)
         } else {
-            sender.backgroundColor = .red
+            sender.colors = .init(button: .red, shadow: .red)
         }
         
         quizBrain.nextQuestion()
@@ -46,15 +47,28 @@ class ViewController: UIViewController {
     
     @objc func updateUI() {
         
-        // Set color back to default
-        buttonA.backgroundColor = .clear
-        buttonB.backgroundColor = .clear
-        buttonC.backgroundColor = .clear
-        buttonD.backgroundColor = .clear
+        /*
+         prepare SwiftyButtons ;)
+         */
+        buttonA.colors = .init(button: .cyan, shadow: .blue)
+        buttonA.disabledColors = .init(button: .gray, shadow: .darkGray)
+        
+        buttonB.colors = .init(button: .cyan, shadow: .blue)
+        buttonB.disabledColors = .init(button: .gray, shadow: .darkGray)
+        
+        buttonC.colors = .init(button: .cyan, shadow: .blue)
+        buttonC.disabledColors = .init(button: .gray, shadow: .darkGray)
+        
+        buttonD.colors = .init(button: .cyan, shadow: .blue)
+        buttonD.disabledColors = .init(button: .gray, shadow: .darkGray)
+        
         buttonA.setTitle(quizBrain.getQuestion()[0], for: .normal)
         buttonB.setTitle(quizBrain.getQuestion()[1], for: .normal)
         buttonC.setTitle(quizBrain.getQuestion()[2], for: .normal)
         buttonD.setTitle(quizBrain.getQuestion()[3], for: .normal)
+        
+        
+        plantImage.layer.borderWidth = 3
         
         /*
          get data from Model

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +27,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="In2-XJ-l3R">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="418"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1aF-n1-gwQ">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1aF-n1-gwQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="1000" text="Your score: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEB-3N-uvv" userLabel="Your score:">
@@ -35,23 +36,24 @@
                                                             <constraint firstAttribute="width" constant="170" id="lc0-v8-F2h"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                        <color key="textColor" systemColor="systemOrangeColor"/>
+                                                        <color key="textColor" name="HeaderColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" text="0.0" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVd-NQ-2x4">
-                                                        <rect key="frame" x="170" y="0.0" width="174" height="36"/>
+                                                        <rect key="frame" x="170" y="0.0" width="164" height="36"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" systemColor="systemPinkColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejN-A5-nKb">
-                                                        <rect key="frame" x="344" y="0.0" width="30" height="24"/>
+                                                        <rect key="frame" x="334" y="0.0" width="40" height="36"/>
                                                         <rect key="contentStretch" x="0.45000000000000001" y="0.0" width="1" height="1"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="30" id="LF5-Sn-5Zj"/>
+                                                            <constraint firstAttribute="width" constant="40" id="LF5-Sn-5Zj"/>
                                                         </constraints>
-                                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="tintColor" name="HeaderColor"/>
                                                         <state key="normal">
                                                             <imageReference key="image" image="arrow.2.circlepath" catalog="system" symbolScale="large"/>
                                                         </state>
@@ -74,7 +76,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="ButtonA">
-                                            <color key="titleColor" systemColor="systemBlueColor"/>
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
@@ -99,7 +101,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="ButtonB" backgroundImage="Rectangle">
-                                            <color key="titleColor" systemColor="linkColor"/>
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
@@ -124,7 +126,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="ButtonC" backgroundImage="Rectangle">
-                                            <color key="titleColor" systemColor="linkColor"/>
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
@@ -149,7 +151,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="ButtonD" backgroundImage="Rectangle">
-                                            <color key="titleColor" systemColor="linkColor"/>
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
@@ -175,6 +177,7 @@
                                     </progressView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="01c-Xd-hBR">
                                         <rect key="frame" x="0.0" y="788" width="374" height="30"/>
+                                        <color key="tintColor" red="0.60784313729999995" green="0.10980392160000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="MAx-an-dtP"/>
                                         </constraints>
@@ -183,7 +186,6 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.61475929003236096" green="0.9313773906818652" blue="0.39538960659233946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fal-oS-tEg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9eb-B8-Mk2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fal-oS-tEg" secondAttribute="trailing" id="TqZ-Hr-0o6"/>
@@ -228,7 +230,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR RESULT:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cn-nK-xWy">
                                         <rect key="frame" x="0.0" y="0.0" width="273" height="48"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="HeaderColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bf-Pa-kux">
@@ -310,19 +312,16 @@
     <resources>
         <image name="Rectangle" width="322" height="68"/>
         <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
-        <image name="background" width="3888" height="2592"/>
+        <image name="background" width="3240" height="2160"/>
         <image name="footer" width="1920" height="218"/>
+        <namedColor name="HeaderColor">
+            <color red="0.10599999874830246" green="0.2630000114440918" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

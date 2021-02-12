@@ -50,20 +50,20 @@ class QuizViewController: UIViewController {
     
     @objc func updateUI() {
         // prepare SwiftyButtons ;)
-        buttonA.colors = .init(button: .cyan, shadow: .blue)
+        buttonA.colors = .init(button: UIColor(named: "ButtonColor")!, shadow: .black)
         buttonA.disabledColors = .init(button: .gray, shadow: .darkGray)
         buttonA.setTitle(quizBrain.getQuestions()[0], for: .normal)
-        buttonB.colors = .init(button: .cyan, shadow: .blue)
+        buttonB.colors = .init(button: UIColor(named: "ButtonColor")!, shadow: .black)
         buttonB.disabledColors = .init(button: .gray, shadow: .darkGray)
         buttonB.setTitle(quizBrain.getQuestions()[1], for: .normal)
-        buttonC.colors = .init(button: .cyan, shadow: .blue)
+        buttonC.colors = .init(button: UIColor(named: "ButtonColor")!, shadow: .black)
         buttonC.disabledColors = .init(button: .gray, shadow: .darkGray)
         buttonC.setTitle(quizBrain.getQuestions()[2], for: .normal)
-        buttonD.colors = .init(button: .cyan, shadow: .blue)
+        buttonD.colors = .init(button: UIColor(named: "ButtonColor")!, shadow: .black)
         buttonD.disabledColors = .init(button: .gray, shadow: .darkGray)
         buttonD.setTitle(quizBrain.getQuestions()[3], for: .normal)
 
-        plantImage.layer.borderWidth = 2
+        plantImage.layer.borderWidth = 1
         
         // Show data from Model
         plantImage.image = UIImage(named: quizBrain.getImageName())

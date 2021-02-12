@@ -52,16 +52,16 @@ class QuizViewController: UIViewController {
         // prepare SwiftyButtons ;)
         buttonA.colors = .init(button: .cyan, shadow: .blue)
         buttonA.disabledColors = .init(button: .gray, shadow: .darkGray)
-        buttonA.setTitle(quizBrain.getQuestion()[0], for: .normal)
+        buttonA.setTitle(quizBrain.getQuestions()[0], for: .normal)
         buttonB.colors = .init(button: .cyan, shadow: .blue)
         buttonB.disabledColors = .init(button: .gray, shadow: .darkGray)
-        buttonB.setTitle(quizBrain.getQuestion()[1], for: .normal)
+        buttonB.setTitle(quizBrain.getQuestions()[1], for: .normal)
         buttonC.colors = .init(button: .cyan, shadow: .blue)
         buttonC.disabledColors = .init(button: .gray, shadow: .darkGray)
-        buttonC.setTitle(quizBrain.getQuestion()[2], for: .normal)
+        buttonC.setTitle(quizBrain.getQuestions()[2], for: .normal)
         buttonD.colors = .init(button: .cyan, shadow: .blue)
         buttonD.disabledColors = .init(button: .gray, shadow: .darkGray)
-        buttonD.setTitle(quizBrain.getQuestion()[3], for: .normal)
+        buttonD.setTitle(quizBrain.getQuestions()[3], for: .normal)
 
         plantImage.layer.borderWidth = 2
         

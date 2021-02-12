@@ -9,33 +9,20 @@ import Foundation
 
 struct QuizBrain {
     
-    var quiz = [
-        Question(qa: "Apple", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
-        Question(qa: "Mickey Mouse", qb: "Brad Pitt", qc: "Joshua Dunn", qd: "stellaris", answer: "stellaris", image: "stellaris"),
-        Question(qa: "Android", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
-        Question(qa: "arbuscula", qb: "rangiferia", qc: "orbuscila", qd: "arbuscula", answer: "rangiferia", image: "rangiferia"),
-        Question(qa: "arbuscula", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
-        Question(qa: "Apple", qb: "Brad Pitt", qc: "arbuscula", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
-        Question(qa: "iOS", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "canina", image: "canina"),
-        Question(qa: "Mickey Mouse", qb: "arbuscula", qc: "rangiferia", qd: "arbuscula", answer: "rangiferia", image: "rangiferia"),
-        Question(qa: "Apple", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "arbuscula", image: "arbuscula"),
-        Question(qa: "Apple", qb: "Brad Pitt", qc: "stellaris", qd: "arbuscula", answer: "stellaris", image: "stellaris"),
-        Question(qa: "Apple", qb: "Brad Pitt", qc: "arbuscula", qd: "arbusculo", answer: "arbuscula", image: "arbuscula"),
-        Question(qa: "Apple", qb: "Brad Pitt", qc: "orbuscila", qd: "arbuscula", answer: "canina", image: "canina"),
-    ]
+    var allQuestions = AllQuestions()
     var questionNumber = 0
     var correctQuestions = 0.0
-    var quizActive = true
+    var quizActive = false
+    var quizResult = ""
     
-    
-    func getQuestion() -> [String] {
-        return [quiz[questionNumber].qa, quiz[questionNumber].qb, quiz[questionNumber].qc, quiz[questionNumber].qd]
+    func getQuestions() -> [String] {
+        return [allQuestions.questions[questionNumber].qa, allQuestions.questions[questionNumber].qb, allQuestions.questions[questionNumber].qc, allQuestions.questions[questionNumber].qd]
     }
     func getProgress() -> Float {
-        return Float(questionNumber + 1) / Float(quiz.count)
+        return Float(questionNumber + 1) / Float(allQuestions.questions.count)
     }
     func getImageName() -> String {
-        return quiz[questionNumber].image
+        return allQuestions.questions[questionNumber].image
     }
     func getScore() -> Double {
         return correctQuestions
@@ -43,9 +30,12 @@ struct QuizBrain {
     func getState() -> Bool {
         return quizActive
     }
+    func getResult() -> String {
+        return quizResult
+    }
     
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
-        if userAnswer == quiz[questionNumber].answer {
+        if userAnswer == allQuestions.questions[questionNumber].answer {
             correctQuestions += 1.0
             return true
         } else {
@@ -54,18 +44,34 @@ struct QuizBrain {
     }
     
     mutating func nextQuestion () {
-        if (questionNumber + 1 != quiz.count) {
+        // Next question
+        if (questionNumber + 1 != allQuestions.questions.count) {
             questionNumber += 1
         }
-        if (questionNumber + 1 == quiz.count) {
-            quizActive = false
+        
+        // Last question answered
+        if (questionNumber + 1 == allQuestions.questions.count) {
+            finish()
         }
     }
     
+    mutating func finish() {
+        if (correctQuestions < 0.3 * Double(allQuestions.questions.count)) {
+            quizResult = "wrench man"
+        }
+        if (correctQuestions >= 0.3 * Double(allQuestions.questions.count) && correctQuestions < 0.7 * Double(allQuestions.questions.count)) {
+            quizResult = "garden lover"
+        }
+        if (correctQuestions >= 0.7 * Double(allQuestions.questions.count)) {
+            quizResult = "landscape architect"
+        }
+        quizActive = false
+    }
+    
     mutating func restart () {
-        correctQuestions = 0
-        questionNumber = 0
+        allQuestions = AllQuestions()
         quizActive = true
-        quiz.shuffle()
+        questionNumber = 0
+        correctQuestions = 0.0
     }
 }

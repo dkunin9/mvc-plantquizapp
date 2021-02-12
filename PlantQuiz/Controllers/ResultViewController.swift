@@ -13,8 +13,8 @@ class ResultViewController: UIViewController {
     var quizBrain: QuizBrain!
 
     @IBOutlet weak var replayButton: PressableButton!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var farmerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,8 @@ class ResultViewController: UIViewController {
     
     
     func updateUI() {
-        resultLabel.text = String(quizBrain.getScore())
+        scoreLabel.text = String(quizBrain.getScore())
+        resultLabel.text = quizBrain.getResult()
     }
     /*
     // MARK: - Navigation

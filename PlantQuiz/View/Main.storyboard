@@ -24,7 +24,7 @@
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="In2-XJ-l3R">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="438"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="418"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1aF-n1-gwQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
@@ -62,12 +62,12 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-Sz-mQX">
-                                                <rect key="frame" x="0.0" y="46" width="374" height="392"/>
+                                                <rect key="frame" x="0.0" y="46" width="374" height="372"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe" customClass="PressableButton" customModule="SwiftyButton">
-                                        <rect key="frame" x="0.0" y="448" width="374" height="70"/>
+                                        <rect key="frame" x="0.0" y="428" width="374" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="ueD-qr-2mT"/>
                                         </constraints>
@@ -92,7 +92,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-vQ-GyC" customClass="PressableButton" customModule="SwiftyButton">
-                                        <rect key="frame" x="0.0" y="528" width="374" height="70"/>
+                                        <rect key="frame" x="0.0" y="508" width="374" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="fNm-VT-9Ox"/>
                                         </constraints>
@@ -117,7 +117,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPH-5Z-v1t" customClass="PressableButton" customModule="SwiftyButton">
-                                        <rect key="frame" x="0.0" y="608" width="374" height="70"/>
+                                        <rect key="frame" x="0.0" y="588" width="374" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="oFW-Ii-hvV"/>
                                         </constraints>
@@ -142,7 +142,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc0-06-l3B" customClass="PressableButton" customModule="SwiftyButton">
-                                        <rect key="frame" x="0.0" y="688" width="374" height="70"/>
+                                        <rect key="frame" x="0.0" y="668" width="374" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="hYE-WG-uTc"/>
                                         </constraints>
@@ -167,14 +167,11 @@
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TXm-qh-7Xg">
-                                        <rect key="frame" x="0.0" y="768" width="374" height="11"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="0.0" y="748" width="374" height="31"/>
                                         <color key="tintColor" red="0.2770131528" green="0.3800790906" blue="0.57570761439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="vxo-8A-N6S"/>
+                                            <constraint firstAttribute="height" constant="30" id="vxo-8A-N6S"/>
                                         </constraints>
-                                        <color key="progressTintColor" systemColor="systemPurpleColor"/>
-                                        <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </progressView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="01c-Xd-hBR">
                                         <rect key="frame" x="0.0" y="788" width="374" height="30"/>
@@ -283,9 +280,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="farmerLabel" destination="6zF-z5-dMo" id="dIH-sX-M1s"/>
                         <outlet property="replayButton" destination="mLG-mM-Ms4" id="0wG-PL-dbw"/>
-                        <outlet property="resultLabel" destination="1Bf-Pa-kux" id="tWB-Kf-PPV"/>
+                        <outlet property="resultLabel" destination="6zF-z5-dMo" id="dIH-sX-M1s"/>
+                        <outlet property="scoreLabel" destination="1Bf-Pa-kux" id="tWB-Kf-PPV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvB-4w-xf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -332,9 +329,6 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

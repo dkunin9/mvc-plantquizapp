@@ -8,5 +8,8 @@ target 'PlantQuiz' do
   # Pods for PlantQuiz
 
 pod 'SwiftyButton'
+pod 'CLTypingLabel'
+pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
 
 end

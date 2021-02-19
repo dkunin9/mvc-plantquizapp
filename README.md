@@ -19,6 +19,7 @@ iOS quiz app for plants
 ## Pods used
 
 * [SwiftyButton](https://github.com/TakeScoop/SwiftyButton)
+* [CLTypingLabel](https://github.com/cl7/CLTypingLabel)
 
 
 ## Running

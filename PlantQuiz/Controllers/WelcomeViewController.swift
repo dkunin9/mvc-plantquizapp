@@ -6,24 +6,30 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: CLTypingLabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        animateTitle()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func animateTitle() {
+        titleLabel.text = ""
+//        var chardIndex = 0.0
+        let title = "☘️ Plantly"
+        titleLabel.text = title
+//        for letter in title {
+//            Timer.scheduledTimer(withTimeInterval: 0.1 * chardIndex, repeats: false) { (timer) in
+//                self.titleLabel.text?.append(letter)
+//            }
+//            chardIndex+=1
+//        }
     }
-    */
 
 }

@@ -16,20 +16,13 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         animateTitle()
-        // Do any additional setup after loading the view.
     }
     
     func animateTitle() {
         titleLabel.text = ""
-//        var chardIndex = 0.0
-        let title = "☘️ Plantly"
+        
+        let title = Constants.appName
         titleLabel.text = title
-//        for letter in title {
-//            Timer.scheduledTimer(withTimeInterval: 0.1 * chardIndex, repeats: false) { (timer) in
-//                self.titleLabel.text?.append(letter)
-//            }
-//            chardIndex+=1
-//        }
     }
 
 }

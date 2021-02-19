@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyButton
+import Firebase
 
 class QuizViewController: UIViewController {
 
@@ -31,7 +32,6 @@ class QuizViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: PressableButton) {
-        // Correct or Wrong answer color manage
         if quizBrain.checkAnswer(sender.currentTitle!) {
             sender.colors = .init(button: .green, shadow: .green)
         } else {
@@ -48,7 +48,24 @@ class QuizViewController: UIViewController {
         updateUI()
     }
     
+    @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+            
+        } catch let signOutError as NSError {
+            print(signOutError.localizedDescription)
+        }
+        
+    }
+    
+    
     @objc func updateUI() {
+        
+        // set navigation
+        navigationItem.hidesBackButton = true
+        title = Constants.appName
+        
         // prepare SwiftyButtons ;)
         buttonA.colors = .init(button: UIColor(named: "ButtonColor")!, shadow: .black)
         buttonA.disabledColors = .init(button: .gray, shadow: .darkGray)
@@ -72,12 +89,12 @@ class QuizViewController: UIViewController {
         
         // Change VC
         if !quizBrain.getState() {
-            self.performSegue(withIdentifier: "openResult", sender: self)
+            self.performSegue(withIdentifier: Constants.quizSegue, sender: self)
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "openResult" {
+        if segue.identifier == Constants.quizSegue {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.quizBrain = quizBrain
         }

@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController {
                     print(e)
                 }
                 else {
-                    self.performSegue(withIdentifier: "RegisterToQuiz", sender: self)
+                    self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
                 }
             }
             

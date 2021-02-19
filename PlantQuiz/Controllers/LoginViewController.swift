@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
                     print(e.localizedDescription)
                 }
                 else {
-                    self.performSegue(withIdentifier: "LoginToQuiz", sender: self)
+                    self.performSegue(withIdentifier: Constants.loginSegue, sender: self)
                 }
             }
         }

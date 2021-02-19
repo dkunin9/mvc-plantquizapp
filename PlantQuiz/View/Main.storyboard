@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CKf-us-hEe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="135"/>
+            <point key="canvasLocation" x="-1196" y="135"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="bXV-zS-Ab5">
@@ -289,24 +289,167 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvB-4w-xf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="135"/>
+            <point key="canvasLocation" x="-106" y="135"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="9s0-rV-EYd">
+            <objects>
+                <viewController id="3Vq-vK-CS4" customClass="WelcomeViewController" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="riO-gm-UJX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☘️ Plantly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLn-1L-s9v">
+                                <rect key="frame" x="87" y="418" width="240.5" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NTa-PM-Eu0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                <color key="textColor" red="0.29803921570000003" green="0.76078431369999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9u-5e-5Rh">
+                                <rect key="frame" x="10" y="791" width="394" height="61"/>
+                                <color key="backgroundColor" red="1" green="0.84321211657399464" blue="0.69820937326899368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Pkf-fT-WH1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.99176046416878838" green="1" blue="0.96515715877562791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuZ-dY-voh">
+                                <rect key="frame" x="10" y="716" width="394" height="61"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.76078431369999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="wbo-ut-ptj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZI1-Ro-g5x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZI1-Ro-g5x" firstAttribute="trailing" secondItem="kuZ-dY-voh" secondAttribute="trailing" constant="10" id="ADw-lt-szR"/>
+                            <constraint firstItem="NLn-1L-s9v" firstAttribute="centerY" secondItem="riO-gm-UJX" secondAttribute="centerY" id="AZl-fs-3CW"/>
+                            <constraint firstItem="L9u-5e-5Rh" firstAttribute="leading" secondItem="ZI1-Ro-g5x" secondAttribute="leading" constant="10" id="DK4-5p-Svw"/>
+                            <constraint firstItem="NLn-1L-s9v" firstAttribute="centerX" secondItem="riO-gm-UJX" secondAttribute="centerX" id="GmI-XY-WmK"/>
+                            <constraint firstItem="ZI1-Ro-g5x" firstAttribute="bottom" secondItem="L9u-5e-5Rh" secondAttribute="bottom" constant="10" id="Try-Yc-rR1"/>
+                            <constraint firstItem="kuZ-dY-voh" firstAttribute="leading" secondItem="ZI1-Ro-g5x" secondAttribute="leading" constant="10" id="Vmp-Gp-t62"/>
+                            <constraint firstItem="L9u-5e-5Rh" firstAttribute="centerX" secondItem="riO-gm-UJX" secondAttribute="centerX" id="Y2C-Tx-6P7"/>
+                            <constraint firstItem="ZI1-Ro-g5x" firstAttribute="trailing" secondItem="L9u-5e-5Rh" secondAttribute="trailing" constant="10" id="b9M-2W-l4q"/>
+                            <constraint firstItem="L9u-5e-5Rh" firstAttribute="top" secondItem="kuZ-dY-voh" secondAttribute="bottom" constant="8" id="log-qI-xJf"/>
+                            <constraint firstItem="kuZ-dY-voh" firstAttribute="centerX" secondItem="riO-gm-UJX" secondAttribute="centerX" id="mUH-s2-tO1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="moX-Kt-q1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3436" y="135"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="uq8-fz-egF">
+            <objects>
+                <viewController id="CKf-us-hEe" customClass="LoginViewController" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5o9-g1-PV5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pxL-3q-mFL">
+                                <rect key="frame" x="29" y="362" width="357" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" name="BrandBlue"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mya-gx-HET">
+                                <rect key="frame" x="29" y="415" width="357" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" name="BrandBlue"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZx-Do-YO7">
+                                <rect key="frame" x="29" y="487" width="372" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.76078431369999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" name="BrandLightBlue"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DPH-Au-W29"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6B-Zl-azI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2275.36231884058" y="134.59821428571428"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="26h-XF-i6G">
+            <objects>
+                <viewController id="1Be-Bp-RHi" customClass="RegisterViewController" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3T6-25-IhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfY-J5-MOF">
+                                <rect key="frame" x="28" y="425" width="357" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" name="BrandBlue"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3T-yI-mft">
+                                <rect key="frame" x="21" y="478" width="357" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" name="BrandBlue"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqQ-FS-NKx">
+                                <rect key="frame" x="28" y="531" width="372" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.76078431369999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" name="BrandLightBlue"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CTx-J4-xke"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBz-sx-qu1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2274" y="-758"/>
         </scene>
     </scenes>
     <designables>
         <designable name="fPH-5Z-v1t">
-            <size key="intrinsicContentSize" width="322" height="68"/>
+            <size key="intrinsicContentSize" width="93" height="32"/>
         </designable>
         <designable name="mLG-mM-Ms4">
-            <size key="intrinsicContentSize" width="322" height="68"/>
+            <size key="intrinsicContentSize" width="88" height="36"/>
         </designable>
         <designable name="oVw-Hl-IRe">
-            <size key="intrinsicContentSize" width="92" height="44"/>
+            <size key="intrinsicContentSize" width="92" height="32"/>
         </designable>
         <designable name="oc0-06-l3B">
-            <size key="intrinsicContentSize" width="322" height="68"/>
+            <size key="intrinsicContentSize" width="93" height="32"/>
         </designable>
         <designable name="tbn-vQ-GyC">
-            <size key="intrinsicContentSize" width="322" height="68"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
     </designables>
     <resources>
@@ -314,6 +457,12 @@
         <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="background" width="3240" height="2160"/>
         <image name="footer" width="1920" height="218"/>
+        <namedColor name="BrandBlue">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BrandLightBlue">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="HeaderColor">
             <color red="0.10599999874830246" green="0.2630000114440918" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

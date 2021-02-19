@@ -10,7 +10,10 @@ import Foundation
 
 struct Constants{
     static let appName = "☘️ Plantly"
+    
     static let registerSegue = "RegisterToQuiz"
     static let loginSegue = "LoginToQuiz"
     static let quizSegue = "QuizToResult"
+    static let cellIdentifier = "ReusableCell"
+    static let nibName = "RecordCell"
 }

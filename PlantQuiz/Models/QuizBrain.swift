@@ -9,7 +9,7 @@ import Foundation
 
 struct QuizBrain {
     
-    var allQuestions = AllQuestions()
+    var allQuestions = Questions()
     var questionNumber = 0
     var correctQuestions = 0.0
     var quizActive = false
@@ -69,7 +69,7 @@ struct QuizBrain {
     }
     
     mutating func restart () {
-        allQuestions = AllQuestions()
+        allQuestions = Questions()
         quizActive = true
         questionNumber = 0
         correctQuestions = 0.0

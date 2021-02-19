@@ -8,7 +8,7 @@
 import UIKit
 import CLTypingLabel
 
-class WelcomeViewController: UIViewController {
+class WelcomeVC: UIViewController {
 
     @IBOutlet weak var titleLabel: CLTypingLabel!
     
@@ -20,7 +20,6 @@ class WelcomeViewController: UIViewController {
     
     func animateTitle() {
         titleLabel.text = ""
-        
         let title = Constants.appName
         titleLabel.text = title
     }

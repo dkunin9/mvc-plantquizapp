@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  LoginViewController.swift
 //  PlantQuiz
 //
 //  Created by Daniel on 19.02.2021.
@@ -8,29 +8,26 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+class LoginVC: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-    @IBAction func registerButtonPressed(_ sender: Any) {
+    @IBAction func loginButtonPressed(_ sender: Any) {
         if let email = emailTextField.text, let password = passwordTextField.text {
-            
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
                 if let e = error {
-                    print(e)
+                    print(e.localizedDescription)
                 }
                 else {
-                    self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
+                    self.performSegue(withIdentifier: Constants.loginSegue, sender: self)
                 }
             }
-            
         }
     }
     

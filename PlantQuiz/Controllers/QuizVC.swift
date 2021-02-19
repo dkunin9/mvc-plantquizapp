@@ -9,7 +9,7 @@ import UIKit
 import SwiftyButton
 import Firebase
 
-class QuizViewController: UIViewController {
+class QuizVC: UIViewController {
 
     // MARK: - Weak variables
 
@@ -95,7 +95,7 @@ class QuizViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.quizSegue {
-            let destinationVC = segue.destination as! ResultViewController
+            let destinationVC = segue.destination as! ResultVC
             destinationVC.quizBrain = quizBrain
         }
     }

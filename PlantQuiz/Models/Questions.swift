@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct AllQuestions {
-    
+struct Questions {
     var questions : [ Question ]
     
     init() {

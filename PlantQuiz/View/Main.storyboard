@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Quiz View Controller-->
+        <!--QuizVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="QuizViewController" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuizVC" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="ButtonB" backgroundImage="Rectangle">
+                                        <state key="normal" title="ButtonB">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -125,7 +125,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="ButtonC" backgroundImage="Rectangle">
+                                        <state key="normal" title="ButtonC">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -150,7 +150,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="ButtonD" backgroundImage="Rectangle">
+                                        <state key="normal" title="ButtonD">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -219,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="-286.95652173913044" y="134.59821428571428"/>
         </scene>
-        <!--Result View Controller-->
+        <!--ResultVC-->
         <scene sceneID="bXV-zS-Ab5">
             <objects>
-                <viewController id="7KR-dq-fjE" customClass="ResultViewController" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7KR-dq-fjE" customClass="ResultVC" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A8u-yl-hbZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,8 +261,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Replay" backgroundImage="Rectangle">
-                                    <color key="titleColor" systemColor="linkColor"/>
+                                <state key="normal" title="Replay">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
@@ -279,19 +279,10 @@
                                     <action selector="replayButtonPressed:" destination="7KR-dq-fjE" eventType="touchUpInside" id="a5u-WF-Lq6"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Gr-dg-YlY">
-                                <rect key="frame" x="44" y="275" width="327" height="293"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" id="C4i-Zm-fly">
-                                        <rect key="frame" x="0.0" y="28" width="327" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C4i-Zm-fly" id="09c-ES-md6">
-                                            <rect key="frame" x="0.0" y="0.0" width="327" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Gr-dg-YlY">
+                                <rect key="frame" x="44" y="193.5" width="327" height="514.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fa2-6R-eNz"/>
@@ -302,23 +293,27 @@
                             <constraint firstItem="GgW-fm-1Pm" firstAttribute="top" secondItem="Fa2-6R-eNz" secondAttribute="top" constant="40" id="ek2-6y-xwR"/>
                             <constraint firstItem="4Gr-dg-YlY" firstAttribute="top" secondItem="GgW-fm-1Pm" secondAttribute="bottom" constant="20" id="g9Z-pe-mjm"/>
                             <constraint firstItem="GgW-fm-1Pm" firstAttribute="centerX" secondItem="A8u-yl-hbZ" secondAttribute="centerX" id="icI-rg-8Y5"/>
+                            <constraint firstItem="mLG-mM-Ms4" firstAttribute="top" secondItem="4Gr-dg-YlY" secondAttribute="bottom" constant="20" id="kok-ho-ST5"/>
                             <constraint firstItem="Fa2-6R-eNz" firstAttribute="trailing" secondItem="mLG-mM-Ms4" secondAttribute="trailing" constant="20" id="l5d-Dc-BUe"/>
+                            <constraint firstItem="4Gr-dg-YlY" firstAttribute="leading" secondItem="Fa2-6R-eNz" secondAttribute="leading" constant="44" id="wBe-Nf-1cX"/>
+                            <constraint firstItem="Fa2-6R-eNz" firstAttribute="trailing" secondItem="4Gr-dg-YlY" secondAttribute="trailing" constant="43" id="y3O-qS-kMu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="replayButton" destination="mLG-mM-Ms4" id="0wG-PL-dbw"/>
                         <outlet property="resultLabel" destination="6zF-z5-dMo" id="dIH-sX-M1s"/>
                         <outlet property="scoreLabel" destination="1Bf-Pa-kux" id="tWB-Kf-PPV"/>
+                        <outlet property="tableView" destination="4Gr-dg-YlY" id="0I5-v6-erQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvB-4w-xf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802.89855072463774" y="134.59821428571428"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="9s0-rV-EYd">
             <objects>
-                <viewController id="3Vq-vK-CS4" customClass="WelcomeViewController" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3Vq-vK-CS4" customClass="WelcomeVC" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="riO-gm-UJX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -390,10 +385,10 @@
             </objects>
             <point key="canvasLocation" x="-2419" y="153"/>
         </scene>
-        <!--Login View Controller-->
+        <!--LoginVC-->
         <scene sceneID="uq8-fz-egF">
             <objects>
-                <viewController id="CKf-us-hEe" customClass="LoginViewController" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CKf-us-hEe" customClass="LoginVC" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5o9-g1-PV5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -444,10 +439,10 @@
             </objects>
             <point key="canvasLocation" x="-1299" y="135"/>
         </scene>
-        <!--Register View Controller-->
+        <!--RegisterVC-->
         <scene sceneID="26h-XF-i6G">
             <objects>
-                <viewController id="1Be-Bp-RHi" customClass="RegisterViewController" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1Be-Bp-RHi" customClass="RegisterVC" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3T6-25-IhZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -522,26 +517,25 @@
             <size key="intrinsicContentSize" width="240.5" height="60"/>
         </designable>
         <designable name="fPH-5Z-v1t">
-            <size key="intrinsicContentSize" width="322" height="68"/>
+            <size key="intrinsicContentSize" width="93" height="44"/>
         </designable>
         <designable name="mLG-mM-Ms4">
-            <size key="intrinsicContentSize" width="322" height="68"/>
+            <size key="intrinsicContentSize" width="88" height="48"/>
         </designable>
         <designable name="oVw-Hl-IRe">
             <size key="intrinsicContentSize" width="92" height="44"/>
         </designable>
         <designable name="oc0-06-l3B">
-            <size key="intrinsicContentSize" width="322" height="68"/>
+            <size key="intrinsicContentSize" width="93" height="44"/>
         </designable>
         <designable name="tbn-vQ-GyC">
-            <size key="intrinsicContentSize" width="322" height="68"/>
+            <size key="intrinsicContentSize" width="91" height="44"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="4JD-1i-MTK"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Rectangle" width="322" height="68"/>
         <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="background" width="375" height="667"/>
         <image name="footer" width="1920" height="218"/>
@@ -554,9 +548,6 @@
         <namedColor name="HeaderColor">
             <color red="0.10599999874830246" green="0.2630000114440918" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

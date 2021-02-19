@@ -29,6 +29,8 @@ class ResultVC: UIViewController {
         super.viewDidLoad()
         updateUI()
         tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: Constants.nibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -50,14 +52,14 @@ class ResultVC: UIViewController {
 
 }
 
-extension ResultVC: UITableViewDataSource {
+extension ResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return records.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath)
-        cell.textLabel?.text = records[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! RecordCell
+        cell.recordLabel.text = records[indexPath.row]
         return cell
     }
 }

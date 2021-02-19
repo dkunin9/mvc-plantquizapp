@@ -301,7 +301,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☘️ Plantly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLn-1L-s9v" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="207" y="418" width="0.0" height="60"/>
+                                <rect key="frame" x="87" y="418" width="240.5" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="NTa-PM-Eu0"/>
                                 </constraints>
@@ -394,6 +394,9 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="BrandLightBlue"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="CKf-us-hEe" eventType="touchUpInside" id="98f-fA-f6a"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DPH-Au-W29"/>
@@ -401,6 +404,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="6Yh-mf-ZWB"/>
                     <connections>
+                        <outlet property="emailTextField" destination="pxL-3q-mFL" id="sBI-Gq-x9d"/>
+                        <outlet property="passwordTextField" destination="mya-gx-HET" id="aqD-sl-Nvr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToQuiz" id="4JD-1i-MTK"/>
                     </connections>
                 </viewController>
@@ -436,9 +441,12 @@
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.76078431369999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
-                                <state key="normal" title="Log In">
+                                <state key="normal" title="Register">
                                     <color key="titleColor" name="BrandLightBlue"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="1Be-Bp-RHi" eventType="touchUpInside" id="Zdc-n5-UzO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CTx-J4-xke"/>
@@ -446,6 +454,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="tjZ-bD-YO4"/>
                     <connections>
+                        <outlet property="emailTextField" destination="wfY-J5-MOF" id="bZw-xr-Rei"/>
+                        <outlet property="passwordTextField" destination="J3T-yI-mft" id="4lH-Re-G1X"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="RegisterToQuiz" id="W36-pZ-bob"/>
                     </connections>
                 </viewController>
@@ -473,25 +483,27 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="NLn-1L-s9v"/>
+        <designable name="NLn-1L-s9v">
+            <size key="intrinsicContentSize" width="240.5" height="60"/>
+        </designable>
         <designable name="fPH-5Z-v1t">
-            <size key="intrinsicContentSize" width="93" height="32"/>
+            <size key="intrinsicContentSize" width="322" height="68"/>
         </designable>
         <designable name="mLG-mM-Ms4">
-            <size key="intrinsicContentSize" width="88" height="36"/>
+            <size key="intrinsicContentSize" width="322" height="68"/>
         </designable>
         <designable name="oVw-Hl-IRe">
-            <size key="intrinsicContentSize" width="92" height="32"/>
+            <size key="intrinsicContentSize" width="92" height="44"/>
         </designable>
         <designable name="oc0-06-l3B">
-            <size key="intrinsicContentSize" width="93" height="32"/>
+            <size key="intrinsicContentSize" width="322" height="68"/>
         </designable>
         <designable name="tbn-vQ-GyC">
-            <size key="intrinsicContentSize" width="91" height="32"/>
+            <size key="intrinsicContentSize" width="322" height="68"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="W36-pZ-bob"/>
+        <segue reference="4JD-1i-MTK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Rectangle" width="322" height="68"/>

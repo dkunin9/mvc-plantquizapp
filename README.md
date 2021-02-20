@@ -5,9 +5,9 @@ iOS quiz app for plants
 
 ## App Features
 
-* Authentication
+* Authorization
 * Guess the plant by image
-* Check your score
+* Check your score, compare with previous
 * Restart the quiz
 
 
@@ -16,13 +16,15 @@ iOS quiz app for plants
 * MVC design pattern
 * Storyboards with segues
 * Firebase
-* CocoaPods dependency manager
+* CocoaPods Dependency Manager
+* Swift Package Manager
 
 
-## Pods used
+## 3rd-party:
 
 * [SwiftyButton](https://github.com/TakeScoop/SwiftyButton)
 * [CLTypingLabel](https://github.com/cl7/CLTypingLabel)
+* [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
 
 
 ## Running

@@ -78,12 +78,22 @@ class ResultVC: UIViewController {
 
 extension ResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return records.count
+        if (records.count < 10) {
+            return records.count
+        }
+        else {
+            return 10
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! RecordCell
-        cell.recordLabel.text = records[indexPath.row]
+        if indexPath.row == 0 {
+            cell.recordLabel.text = "⭐️ \(records[indexPath.row])"
+            cell.recordLabel.font = cell.recordLabel.font.withSize(21)
+        } else {
+            cell.recordLabel.text = records[indexPath.row]
+        }
         return cell
     }
 }

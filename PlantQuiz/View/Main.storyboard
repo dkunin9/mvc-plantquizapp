@@ -333,11 +333,11 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9u-5e-5Rh">
                                 <rect key="frame" x="10" y="791" width="394" height="61"/>
-                                <color key="backgroundColor" red="1" green="0.84321211657399464" blue="0.69820937326899368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.78060233160621761" green="0.7284424330775755" blue="0.6299197950642742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Pkf-fT-WH1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.99176046416878838" green="1" blue="0.96515715877562791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -352,7 +352,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="wbo-ut-ptj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -368,7 +368,7 @@
                             <constraint firstItem="NLn-1L-s9v" firstAttribute="centerY" secondItem="riO-gm-UJX" secondAttribute="centerY" id="AZl-fs-3CW"/>
                             <constraint firstItem="L9u-5e-5Rh" firstAttribute="leading" secondItem="ZI1-Ro-g5x" secondAttribute="leading" constant="10" id="DK4-5p-Svw"/>
                             <constraint firstItem="NLn-1L-s9v" firstAttribute="centerX" secondItem="riO-gm-UJX" secondAttribute="centerX" id="GmI-XY-WmK"/>
-                            <constraint firstItem="ZI1-Ro-g5x" firstAttribute="bottom" secondItem="L9u-5e-5Rh" secondAttribute="bottom" constant="10" id="Try-Yc-rR1"/>
+                            <constraint firstItem="ZI1-Ro-g5x" firstAttribute="bottom" secondItem="L9u-5e-5Rh" secondAttribute="bottom" constant="20" id="Try-Yc-rR1"/>
                             <constraint firstItem="kuZ-dY-voh" firstAttribute="leading" secondItem="ZI1-Ro-g5x" secondAttribute="leading" constant="10" id="Vmp-Gp-t62"/>
                             <constraint firstItem="L9u-5e-5Rh" firstAttribute="centerX" secondItem="riO-gm-UJX" secondAttribute="centerX" id="Y2C-Tx-6P7"/>
                             <constraint firstItem="ZI1-Ro-g5x" firstAttribute="trailing" secondItem="L9u-5e-5Rh" secondAttribute="trailing" constant="10" id="b9M-2W-l4q"/>
@@ -505,6 +505,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XTg-1X-wza">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                        <color key="barTintColor" red="0.29803921570000003" green="0.76078431369999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -115,11 +115,11 @@
 		659C4A8725D4699E006ED2CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */,
+				65EFD9C525DF957A004A809E /* RegisterVC.swift */,
+				65EFD9C225DF9558004A809E /* LoginVC.swift */,
 				6555387F25D44CB700A62FDC /* QuizVC.swift */,
 				650A69B925D5A727003A7604 /* ResultVC.swift */,
-				65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */,
-				65EFD9C225DF9558004A809E /* LoginVC.swift */,
-				65EFD9C525DF957A004A809E /* RegisterVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

@@ -7,23 +7,24 @@
 
 import UIKit
 import SwiftyButton
-
-
-let records = [
-    "👑 8/10 Landscape Architect",
-    "1/10 Wrench man",
-]
+import FirebaseAuth
+import FirebaseFirestore
 
 
 class ResultVC: UIViewController {
     
-    var quizBrain: QuizBrain!
+    // MARK: - Weak variables
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var replayButton: PressableButton!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    
+    var quizBrain: QuizBrain!
+    
+    var records : [String] = []
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +43,37 @@ class ResultVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
     func updateUI() {
         scoreLabel.text = String(quizBrain.getScore())
         resultLabel.text = quizBrain.getResult()
-        
+        loadResults()
     }
-
+    
+    func loadResults() {
+        db.collection(Constants.FStore.collectionName)
+            .order(by: Constants.FStore.scoreField)
+            .getDocuments { (querySnapshot, error) in
+            self.records = []
+            if let e = error {
+                print("Issue in loading from firestore: \(e.localizedDescription)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let sender = data[Constants.FStore.senderField] as? String,
+                           let result = data[Constants.FStore.resultField] as? String,
+                           let score = data[Constants.FStore.scoreField] as? String {
+                            self.records.append("\(score)" + " " + "\(result)")
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                        print(doc.data())
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension ResultVC: UITableViewDataSource, UITableViewDelegate {

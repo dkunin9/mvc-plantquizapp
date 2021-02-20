@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class RegisterVC: UIViewController {
 
+    // MARK: - Weak variables
+    
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!

@@ -93,7 +93,6 @@ class QuizVC: UIViewController {
         
         // Push ResultVC
         if !quizBrain.getState() {
-            self.performSegue(withIdentifier: Constants.quizSegue, sender: self)
             let score = String(quizBrain.getScore())
             let result = quizBrain.getResult()
             if let resultSender = Auth.auth().currentUser?.email
@@ -102,7 +101,8 @@ class QuizVC: UIViewController {
                     Constants.FStore.senderField: resultSender,
                     Constants.FStore.scoreField: score,
                     Constants.FStore.resultField: result,
-                ]
+                    Constants.FStore.dateField: Date().timeIntervalSince1970
+                ] as [String : Any]
                 db.collection(Constants.FStore.collectionName).addDocument(data: resultData) { (error) in
                     if let e = error {
                         print("Issue in saving to firestore: \(e.localizedDescription)")
@@ -111,6 +111,7 @@ class QuizVC: UIViewController {
                     }
                 }
             }
+            self.performSegue(withIdentifier: Constants.quizSegue, sender: self)
         }
     }
 

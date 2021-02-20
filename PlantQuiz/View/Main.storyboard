@@ -323,7 +323,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☘️ Plantly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLn-1L-s9v" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="87" y="418" width="240.5" height="60"/>
+                                <rect key="frame" x="207" y="418" width="0.0" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="NTa-PM-Eu0"/>
                                 </constraints>
@@ -378,6 +378,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Q2-oP-mu9"/>
                     <connections>
+                        <outlet property="loginButton" destination="kuZ-dY-voh" id="ZS2-Zn-gmW"/>
+                        <outlet property="registerButton" destination="L9u-5e-5Rh" id="vPq-ll-4g3"/>
                         <outlet property="titleLabel" destination="NLn-1L-s9v" id="WRK-3z-MzA"/>
                     </connections>
                 </viewController>
@@ -431,6 +433,7 @@
                     <navigationItem key="navigationItem" id="6Yh-mf-ZWB"/>
                     <connections>
                         <outlet property="emailTextField" destination="pxL-3q-mFL" id="sBI-Gq-x9d"/>
+                        <outlet property="loginButton" destination="EZx-Do-YO7" id="btg-p9-gqN"/>
                         <outlet property="passwordTextField" destination="mya-gx-HET" id="aqD-sl-Nvr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToQuiz" id="4JD-1i-MTK"/>
                     </connections>
@@ -486,6 +489,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="wfY-J5-MOF" id="bZw-xr-Rei"/>
                         <outlet property="passwordTextField" destination="J3T-yI-mft" id="4lH-Re-G1X"/>
+                        <outlet property="registerButton" destination="PqQ-FS-NKx" id="SCF-tF-M2t"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="RegisterToQuiz" id="W36-pZ-bob"/>
                     </connections>
                 </viewController>
@@ -513,23 +517,21 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="NLn-1L-s9v">
-            <size key="intrinsicContentSize" width="240.5" height="60"/>
-        </designable>
+        <designable name="NLn-1L-s9v"/>
         <designable name="fPH-5Z-v1t">
-            <size key="intrinsicContentSize" width="93" height="44"/>
+            <size key="intrinsicContentSize" width="93" height="32"/>
         </designable>
         <designable name="mLG-mM-Ms4">
-            <size key="intrinsicContentSize" width="88" height="48"/>
+            <size key="intrinsicContentSize" width="88" height="36"/>
         </designable>
         <designable name="oVw-Hl-IRe">
-            <size key="intrinsicContentSize" width="92" height="44"/>
+            <size key="intrinsicContentSize" width="92" height="32"/>
         </designable>
         <designable name="oc0-06-l3B">
-            <size key="intrinsicContentSize" width="93" height="44"/>
+            <size key="intrinsicContentSize" width="93" height="32"/>
         </designable>
         <designable name="tbn-vQ-GyC">
-            <size key="intrinsicContentSize" width="91" height="44"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

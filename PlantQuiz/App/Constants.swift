@@ -14,6 +14,15 @@ struct Constants{
     static let registerSegue = "RegisterToQuiz"
     static let loginSegue = "LoginToQuiz"
     static let quizSegue = "QuizToResult"
+    
     static let cellIdentifier = "ReusableCell"
     static let nibName = "RecordCell"
+    
+    struct FStore {
+        static let collectionName = "results"
+        static let senderField = "sender"
+        static let scoreField = "score"
+        static let resultField = "result"
+        static let dateField = "date"
+    }
 }

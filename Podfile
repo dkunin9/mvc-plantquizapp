@@ -11,5 +11,6 @@ pod 'SwiftyButton'
 pod 'CLTypingLabel'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'FirebaseFirestoreSwift'
 
 end

@@ -8,6 +8,8 @@
 import UIKit
 import SwiftyButton
 import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 
 class QuizVC: UIViewController {
 
@@ -22,6 +24,8 @@ class QuizVC: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     
     var quizBrain = QuizBrain()
+    
+    let db = Firestore.firestore()
     
     // MARK: View Life Cycle
     
@@ -87,9 +91,26 @@ class QuizVC: UIViewController {
         progressBar.setProgress(quizBrain.getProgress(), animated: true)
         scoreLabel.text = String(quizBrain.getScore())
         
-        // Change VC
+        // Push ResultVC
         if !quizBrain.getState() {
             self.performSegue(withIdentifier: Constants.quizSegue, sender: self)
+            let score = String(quizBrain.getScore())
+            let result = quizBrain.getResult()
+            if let resultSender = Auth.auth().currentUser?.email
+            {
+                let resultData = [
+                    Constants.FStore.senderField: resultSender,
+                    Constants.FStore.scoreField: score,
+                    Constants.FStore.resultField: result,
+                ]
+                db.collection(Constants.FStore.collectionName).addDocument(data: resultData) { (error) in
+                    if let e = error {
+                        print("Issue in saving to firestore: \(e.localizedDescription)")
+                    } else {
+                        print("Successfully saved")
+                    }
+                }
+            }
         }
     }
 

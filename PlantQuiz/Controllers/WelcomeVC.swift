@@ -32,16 +32,17 @@ class WelcomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerButton.layer.cornerRadius = 10
-        loginButton.layer.cornerRadius = 10
         updateUI()
     }
     
     func updateUI() {
+        registerButton.layer.cornerRadius = 10
+        registerButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
+        loginButton.layer.cornerRadius = 10
+        loginButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
+        
         titleLabel.text = ""
         titleLabel.font = UIFont(name: Constants.Fonts.pacifico, size: 70)
-        registerButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
-        loginButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
         let title = Constants.appName
         titleLabel.text = title
     }

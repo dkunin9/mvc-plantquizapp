@@ -17,6 +17,13 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - View Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateUI()
+    }
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
@@ -28,6 +35,11 @@ class LoginVC: UIViewController {
                 }
             }
         }
+    }
+    
+    func updateUI() {
+        loginButton.layer.cornerRadius = 10
+        loginButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
     }
 }
 

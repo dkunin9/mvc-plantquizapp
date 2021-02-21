@@ -17,10 +17,11 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerButton.layer.cornerRadius = 10
-        // Do any additional setup after loading the view.
+        updateUI()
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {
@@ -36,6 +37,11 @@ class RegisterVC: UIViewController {
             }
             
         }
+    }
+    
+    func updateUI() {
+        registerButton.layer.cornerRadius = 10
+        registerButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
     }
     
 }

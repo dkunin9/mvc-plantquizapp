@@ -21,6 +21,8 @@ class WelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        let attributes = [NSAttributedString.Key.font: UIFont(name: Constants.Fonts.righteous, size: 30)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,6 +39,9 @@ class WelcomeVC: UIViewController {
     
     func updateUI() {
         titleLabel.text = ""
+        titleLabel.font = UIFont(name: Constants.Fonts.pacifico, size: 70)
+        registerButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
+        loginButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
         let title = Constants.appName
         titleLabel.text = title
     }

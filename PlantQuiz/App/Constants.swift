@@ -25,4 +25,9 @@ struct Constants{
         static let resultField = "result"
         static let dateField = "date"
     }
+    
+    struct Fonts {
+        static let pacifico = "Pacifico-Regular"
+        static let righteous = "Righteous-Regular"
+    }
 }

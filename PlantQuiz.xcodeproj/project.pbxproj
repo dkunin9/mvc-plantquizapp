@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4374E9DB8C4D7ECAFB9E4301 /* Pods_PlantQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3873EA5EEB2222196C989BE1 /* Pods_PlantQuiz.framework */; };
+		6500F81425E2B15C00188825 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500F81325E2B15C00188825 /* Pacifico-Regular.ttf */; };
+		6500F81725E2B20E00188825 /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500F81625E2B20E00188825 /* Righteous-Regular.ttf */; };
 		650A69AA25D57413003A7604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650A69A925D57413003A7604 /* Main.storyboard */; };
 		650A69B225D57E49003A7604 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 650A69B125D57E49003A7604 /* README.md */; };
 		650A69BA25D5A727003A7604 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A69B925D5A727003A7604 /* ResultVC.swift */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		3873EA5EEB2222196C989BE1 /* Pods_PlantQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6500F81325E2B15C00188825 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		6500F81625E2B20E00188825 /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
 		650A69A925D57413003A7604 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		650A69B125D57E49003A7604 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		650A69B925D5A727003A7604 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6500F80F25E2AE4C00188825 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6500F81325E2B15C00188825 /* Pacifico-Regular.ttf */,
+				6500F81625E2B20E00188825 /* Righteous-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		6555386F25D44CB700A62FDC = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +103,7 @@
 		6555387A25D44CB700A62FDC /* PlantQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				6500F80F25E2AE4C00188825 /* Fonts */,
 				659C4A8E25D47A2A006ED2CC /* App */,
 				659C4A8825D469B2006ED2CC /* Models */,
 				659C4A8625D4699A006ED2CC /* View */,
@@ -229,7 +243,9 @@
 				65EFD9FE25DFFE54004A809E /* RecordCell.xib in Resources */,
 				6555388825D44CB800A62FDC /* LaunchScreen.storyboard in Resources */,
 				650A69AA25D57413003A7604 /* Main.storyboard in Resources */,
+				6500F81725E2B20E00188825 /* Righteous-Regular.ttf in Resources */,
 				65EFD9CD25DFACB3004A809E /* GoogleService-Info.plist in Resources */,
+				6500F81425E2B15C00188825 /* Pacifico-Regular.ttf in Resources */,
 				650A69B225D57E49003A7604 /* README.md in Resources */,
 				6555388525D44CB800A62FDC /* Assets.xcassets in Resources */,
 			);

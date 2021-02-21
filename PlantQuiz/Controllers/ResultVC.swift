@@ -22,9 +22,13 @@ class ResultVC: UIViewController {
     
     var quizBrain: QuizBrain!
     
+    var delegate: RefreshQuizProtocol?
+    
     var records : [String] = []
     
     let db = Firestore.firestore()
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +39,7 @@ class ResultVC: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        quizBrain.restart()
-        print("lmao")
+        self.delegate?.needsToRefresh()
     }
 
     @IBAction func replayButtonPressed(_ sender: PressableButton) {
@@ -74,6 +77,7 @@ class ResultVC: UIViewController {
             }
         }
     }
+    
 }
 
 extension ResultVC: UITableViewDataSource, UITableViewDelegate {

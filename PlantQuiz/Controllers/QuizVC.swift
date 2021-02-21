@@ -11,6 +11,12 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAuth
 
+
+protocol RefreshQuizProtocol {
+    func needsToRefresh()
+}
+
+
 class QuizVC: UIViewController {
 
     // MARK: - Weak variables
@@ -62,7 +68,6 @@ class QuizVC: UIViewController {
         }
         
     }
-    
     
     @objc func updateUI() {
         
@@ -119,8 +124,17 @@ class QuizVC: UIViewController {
         if segue.identifier == Constants.quizSegue {
             let destinationVC = segue.destination as! ResultVC
             destinationVC.quizBrain = quizBrain
+            destinationVC.delegate = self
         }
     }
 
+}
+
+
+extension QuizVC: RefreshQuizProtocol {
+    func needsToRefresh() {
+        quizBrain.restart()
+        updateUI()
+    }
 }
 

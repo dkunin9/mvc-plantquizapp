@@ -24,6 +24,13 @@ class RegisterVC: UIViewController {
         updateUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+    }
+    
     @IBAction func registerButtonPressed(_ sender: Any) {
         if let email = emailTextField.text, let password = passwordTextField.text {
             

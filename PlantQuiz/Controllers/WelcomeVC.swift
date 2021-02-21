@@ -8,7 +8,7 @@
 import UIKit
 import CLTypingLabel
 
-class WelcomeVC: UIViewController {
+class WelcomeVC: UIViewController, UINavigationControllerDelegate {
 
     // MARK: - Weak variables
     
@@ -18,21 +18,14 @@ class WelcomeVC: UIViewController {
     
     // MARK: - View Lifecycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
-        let attributes = [NSAttributedString.Key.font: UIFont(name: Constants.Fonts.righteous, size: 30)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func updateUI() {

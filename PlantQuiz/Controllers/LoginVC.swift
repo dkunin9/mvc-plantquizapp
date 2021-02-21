@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UINavigationControllerDelegate {
     
     // MARK: - Weak variables
     
@@ -22,6 +22,13 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+    } 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -41,5 +48,6 @@ class LoginVC: UIViewController {
         loginButton.layer.cornerRadius = 10
         loginButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
     }
+    
 }
 

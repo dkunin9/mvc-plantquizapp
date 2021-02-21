@@ -224,7 +224,7 @@
             <objects>
                 <viewController id="7KR-dq-fjE" customClass="ResultVC" customModule="PlantQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A8u-yl-hbZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ZsF-zN-ZVU">
@@ -454,6 +454,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="pxL-3q-mFL" id="sBI-Gq-x9d"/>
                         <outlet property="loginButton" destination="EZx-Do-YO7" id="btg-p9-gqN"/>
+                        <outlet property="navigationItem" destination="6Yh-mf-ZWB" id="jOU-mp-LjH"/>
                         <outlet property="passwordTextField" destination="mya-gx-HET" id="aqD-sl-Nvr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToQuiz" id="4JD-1i-MTK"/>
                     </connections>
@@ -568,7 +569,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="W36-pZ-bob"/>
+        <segue reference="4JD-1i-MTK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
@@ -584,7 +585,7 @@
             <color red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TitleColor">
-            <color red="0.15294117647058825" green="0.68235294117647061" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.15299999713897705" green="0.68199998140335083" blue="0.37599998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

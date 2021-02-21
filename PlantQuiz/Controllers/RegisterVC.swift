@@ -39,6 +39,7 @@ class RegisterVC: UIViewController {
         }
     }
     
+    
     func updateUI() {
         registerButton.layer.cornerRadius = 10
         registerButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)

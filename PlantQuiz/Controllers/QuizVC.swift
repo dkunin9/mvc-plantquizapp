@@ -10,6 +10,7 @@ import SwiftyButton
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
+import ViewAnimator
 
 
 protocol RefreshQuizProtocol {
@@ -75,6 +76,15 @@ class QuizVC: UIViewController {
         navigationItem.hidesBackButton = true
         title = Constants.appName
         
+        let zoomAnimation = AnimationType.zoom(scale: 2)
+        let horizontalAnimation = AnimationType.vector(CGVector(dx: 20, dy: 0))
+        UIView.animate(views: [plantImage, buttonA, buttonB, buttonC, buttonD],
+                       animations: [horizontalAnimation],
+                       options: [.curveEaseInOut],
+                       completion: nil)
+
+        
+        
         // prepare SwiftyButtons ;)
         buttonA.colors = .init(button: UIColor(named: "ButtonColor")!, shadow: .black)
         buttonA.disabledColors = .init(button: .gray, shadow: .darkGray)
@@ -94,6 +104,15 @@ class QuizVC: UIViewController {
         // Show data from Model
         plantImage.image = UIImage(named: quizBrain.getImageName())
         progressBar.setProgress(quizBrain.getProgress(), animated: true)
+        
+        
+        if (scoreLabel.text != String(quizBrain.getScore())) {
+            UIView.animate(views: [scoreLabel],
+                           animations: [zoomAnimation],
+                           options: [.curveEaseInOut],
+                           completion: nil)
+        }
+        
         scoreLabel.text = String(quizBrain.getScore())
         
         // Push ResultVC

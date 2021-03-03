@@ -25,6 +25,7 @@ iOS quiz app for plants
 * [SwiftyButton](https://github.com/TakeScoop/SwiftyButton)
 * [CLTypingLabel](https://github.com/cl7/CLTypingLabel)
 * [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
+* [ViewAnimator](https://github.com/marcosgriselli/ViewAnimator)
 
 
 ## Running

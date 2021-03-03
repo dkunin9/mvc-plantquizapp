@@ -23,6 +23,7 @@
 		659C4A8325D45B2F006ED2CC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C4A8225D45B2F006ED2CC /* Question.swift */; };
 		659C4A8B25D46EA8006ED2CC /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C4A8A25D46EA8006ED2CC /* QuizBrain.swift */; };
 		659C7D9925EE467800A41214 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 659C7D9725EE467800A41214 /* DataModel.xcdatamodeld */; };
+		659C7D9C25EFE18B00A41214 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C7D9B25EFE18B00A41214 /* PopAnimator.swift */; };
 		65EFD9C025DF91E0004A809E /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */; };
 		65EFD9C325DF9558004A809E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFD9C225DF9558004A809E /* LoginVC.swift */; };
 		65EFD9C625DF957A004A809E /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFD9C525DF957A004A809E /* RegisterVC.swift */; };
@@ -50,6 +51,7 @@
 		659C4A8225D45B2F006ED2CC /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		659C4A8A25D46EA8006ED2CC /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		659C7D9825EE467800A41214 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		659C7D9B25EFE18B00A41214 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		65EFD9C225DF9558004A809E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		65EFD9C525DF957A004A809E /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		659C4A8725D4699E006ED2CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				659C7D9B25EFE18B00A41214 /* PopAnimator.swift */,
 				65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */,
 				65EFD9C525DF957A004A809E /* RegisterVC.swift */,
 				65EFD9C225DF9558004A809E /* LoginVC.swift */,
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659C7D9C25EFE18B00A41214 /* PopAnimator.swift in Sources */,
 				65EFD9C325DF9558004A809E /* LoginVC.swift in Sources */,
 				65EFD9E425DFD8E0004A809E /* Constants.swift in Sources */,
 				65EFD9C625DF957A004A809E /* RegisterVC.swift in Sources */,

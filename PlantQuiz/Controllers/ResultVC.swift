@@ -9,9 +9,12 @@ import UIKit
 import SwiftyButton
 import FirebaseAuth
 import FirebaseFirestore
+import ViewAnimator
 
 
 class ResultVC: UIViewController {
+    
+    private let animations = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
     
     // MARK: - Weak variables
     
@@ -38,8 +41,19 @@ class ResultVC: UIViewController {
         tableView.register(UINib(nibName: Constants.nibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+//        self.delegate?.needsToRefresh()
+        resultLabel.isHidden = false
+        UIView.animate(views: [resultLabel], animations: self.animations, completion: nil)
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         self.delegate?.needsToRefresh()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
     }
 
     @IBAction func replayButtonPressed(_ sender: PressableButton) {
@@ -69,6 +83,7 @@ class ResultVC: UIViewController {
                             self.records.append("\(score)" + " " + "\(result)")
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                UIView.animate(views: self.tableView.visibleCells, animations: self.animations, completion: nil)
                             }
                         }
                         print(doc.data())
@@ -81,6 +96,7 @@ class ResultVC: UIViewController {
 }
 
 extension ResultVC: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (records.count < 10) {
             return records.count

@@ -8,6 +8,8 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import ViewAnimator
+
 
 class LoginVC: UIViewController, UINavigationControllerDelegate {
     
@@ -29,6 +31,7 @@ class LoginVC: UIViewController, UINavigationControllerDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
         }
+        animate()
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -47,6 +50,15 @@ class LoginVC: UIViewController, UINavigationControllerDelegate {
     func updateUI() {
         loginButton.layer.cornerRadius = 10
         loginButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
+    }
+    
+    func animate() {
+        let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
+        let fromAnimation2 = AnimationType.vector(CGVector(dx: 60, dy: 0))
+        let zoomAnimation = AnimationType.zoom(scale: 2)
+        
+        UIView.animate(views: [loginButton], animations: [zoomAnimation, fromAnimation], options: [.curveEaseInOut], completion: nil)
+        UIView.animate(views: [emailTextField, passwordTextField], animations: [fromAnimation2], options: [.curveEaseInOut], completion: nil)
     }
     
 }

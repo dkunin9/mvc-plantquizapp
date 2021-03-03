@@ -49,11 +49,12 @@ class ResultVC: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         self.delegate?.needsToRefresh()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
+        super.viewWillDisappear(animated)
     }
 
     @IBAction func replayButtonPressed(_ sender: PressableButton) {

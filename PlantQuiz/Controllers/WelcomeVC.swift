@@ -7,9 +7,10 @@
 
 import UIKit
 import CLTypingLabel
+import ViewAnimator
 
 class WelcomeVC: UIViewController, UINavigationControllerDelegate {
-
+    
     // MARK: - Weak variables
     
     @IBOutlet weak var titleLabel: CLTypingLabel!
@@ -26,6 +27,7 @@ class WelcomeVC: UIViewController, UINavigationControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        animate()
     }
     
     func updateUI() {
@@ -38,6 +40,14 @@ class WelcomeVC: UIViewController, UINavigationControllerDelegate {
         titleLabel.font = UIFont(name: Constants.Fonts.pacifico, size: 70)
         let title = Constants.appName
         titleLabel.text = title
+    }
+    
+    func animate() {
+        let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
+        let zoomAnimation = AnimationType.zoom(scale: 2)
+        let rotateAnimation = AnimationType.rotate(angle: CGFloat.pi/6)
+        
+        UIView.animate(views: [titleLabel, registerButton, loginButton], animations: [rotateAnimation, zoomAnimation, fromAnimation], options: [.curveEaseInOut], completion: nil)
     }
 
 }

@@ -17,7 +17,8 @@ class LeadersVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    private let animations = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
+    private let animationVertical = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
+    private let animationHorizontal = [AnimationType.vector(CGVector(dx: 30, dy: 0))]
     
     let db = Firestore.firestore()
     
@@ -35,7 +36,8 @@ class LeadersVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(views: [titleLabel], animations: self.animations, completion: nil)
+        UIView.animate(views: [titleLabel], animations: self.animationVertical, completion: nil)
+        UIView.animate(views: self.tableView.visibleCells, animations: self.animationHorizontal, completion: nil)
     }
     
     func updateUI() {
@@ -59,7 +61,7 @@ class LeadersVC: UIViewController {
                             self.leaders.append("\(score)" + " " + "\(sender)")
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
-                                UIView.animate(views: self.tableView.visibleCells, animations: self.animations, completion: nil)
+                                UIView.animate(views: self.tableView.visibleCells, animations: self.animationHorizontal, completion: nil)
                             }
                         }
                         print(doc.data())
@@ -86,8 +88,10 @@ extension LeadersVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.leaderCellIdentifier, for: indexPath) as! LeaderCell
         if indexPath.row == 0 {
             cell.leaderLabel.text = "⭐️ \(leaders[indexPath.row])"
+            cell.leaderLabel.font = UIFont(name: Constants.Fonts.righteous, size: 30)
         } else {
             cell.leaderLabel.text = leaders[indexPath.row]
+            cell.leaderLabel.font = UIFont(name: Constants.Fonts.righteous, size: 20)
         }
         return cell
     }

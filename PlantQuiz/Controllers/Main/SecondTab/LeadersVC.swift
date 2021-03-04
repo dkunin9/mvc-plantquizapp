@@ -1,35 +1,27 @@
 //
-//  ResultsViewController.swift
+//  LeadersVC.swift
 //  PlantQuiz
 //
-//  Created by Daniel on 11.02.2021.
+//  Created by Daniel on 04.03.2021.
 //
 
 import UIKit
-import SwiftyButton
+import ViewAnimator
 import FirebaseAuth
 import FirebaseFirestore
-import ViewAnimator
 
-
-class ResultVC: UIViewController {
-    
-    private let animations = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
+class LeadersVC: UIViewController {
     
     // MARK: - Weak variables
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var replayButton: PressableButton!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    var quizBrain: QuizBrain!
-    
-    var delegate: RefreshQuizProtocol?
-    
-    var records : [String] = []
+    private let animations = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
     
     let db = Firestore.firestore()
+    
+    var leaders : [String] = []
     
     // MARK: - View Lifecycle
     
@@ -38,32 +30,15 @@ class ResultVC: UIViewController {
         updateUI()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: Constants.nibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        tableView.register(UINib(nibName: Constants.leaderNibName, bundle: nil), forCellReuseIdentifier: Constants.leaderCellIdentifier)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-//        self.delegate?.needsToRefresh()
-        resultLabel.isHidden = false
-        UIView.animate(views: [resultLabel], animations: self.animations, completion: nil)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.delegate?.needsToRefresh()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-
-    @IBAction func replayButtonPressed(_ sender: PressableButton) {
-        self.dismiss(animated: true, completion: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(views: [titleLabel], animations: self.animations, completion: nil)
     }
     
     func updateUI() {
-        scoreLabel.text = String(quizBrain.getScore())
-        resultLabel.text = quizBrain.getResult()
         loadResults()
     }
     
@@ -71,7 +46,7 @@ class ResultVC: UIViewController {
         db.collection(Constants.FStore.collectionName)
             .order(by: Constants.FStore.scoreField)
             .getDocuments { (querySnapshot, error) in
-            self.records = []
+            self.leaders = []
             if let e = error {
                 print("Issue in loading from firestore: \(e.localizedDescription)")
             } else {
@@ -81,7 +56,7 @@ class ResultVC: UIViewController {
                         if let sender = data[Constants.FStore.senderField] as? String,
                            let result = data[Constants.FStore.resultField] as? String,
                            let score = data[Constants.FStore.scoreField] as? String {
-                            self.records.append("\(score)" + " " + "\(result)")
+                            self.leaders.append("\(score)" + " " + "\(sender)")
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                                 UIView.animate(views: self.tableView.visibleCells, animations: self.animations, completion: nil)
@@ -96,24 +71,23 @@ class ResultVC: UIViewController {
     
 }
 
-extension ResultVC: UITableViewDataSource, UITableViewDelegate {
+extension LeadersVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (records.count < 10) {
-            return records.count
+        if (leaders.count < 5) {
+            return leaders.count
         }
         else {
-            return 10
+            return 5
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! RecordCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.leaderCellIdentifier, for: indexPath) as! LeaderCell
         if indexPath.row == 0 {
-            cell.recordLabel.text = "⭐️ \(records[indexPath.row])"
-            cell.recordLabel.font = cell.recordLabel.font.withSize(21)
+            cell.leaderLabel.text = "⭐️ \(leaders[indexPath.row])"
         } else {
-            cell.recordLabel.text = records[indexPath.row]
+            cell.leaderLabel.text = leaders[indexPath.row]
         }
         return cell
     }

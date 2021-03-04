@@ -23,6 +23,10 @@
 		659C4A8325D45B2F006ED2CC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C4A8225D45B2F006ED2CC /* Question.swift */; };
 		659C4A8B25D46EA8006ED2CC /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C4A8A25D46EA8006ED2CC /* QuizBrain.swift */; };
 		659C7D9925EE467800A41214 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 659C7D9725EE467800A41214 /* DataModel.xcdatamodeld */; };
+		659C7E3C25F0F6EB00A41214 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C7E3B25F0F6EB00A41214 /* TabBarVC.swift */; };
+		659C7E4025F0FFC100A41214 /* LeadersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C7E3F25F0FFC100A41214 /* LeadersVC.swift */; };
+		659C7E4425F108D000A41214 /* LeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C7E4225F108D000A41214 /* LeaderCell.swift */; };
+		659C7E4525F108D000A41214 /* LeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659C7E4325F108D000A41214 /* LeaderCell.xib */; };
 		65EFD9C025DF91E0004A809E /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */; };
 		65EFD9C325DF9558004A809E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFD9C225DF9558004A809E /* LoginVC.swift */; };
 		65EFD9C625DF957A004A809E /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFD9C525DF957A004A809E /* RegisterVC.swift */; };
@@ -50,6 +54,10 @@
 		659C4A8225D45B2F006ED2CC /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		659C4A8A25D46EA8006ED2CC /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		659C7D9825EE467800A41214 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		659C7E3B25F0F6EB00A41214 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		659C7E3F25F0FFC100A41214 /* LeadersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadersVC.swift; sourceTree = "<group>"; };
+		659C7E4225F108D000A41214 /* LeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderCell.swift; sourceTree = "<group>"; };
+		659C7E4325F108D000A41214 /* LeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderCell.xib; sourceTree = "<group>"; };
 		65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		65EFD9C225DF9558004A809E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		65EFD9C525DF957A004A809E /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -120,10 +128,10 @@
 		659C4A8625D4699A006ED2CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				659C7E4825F10A3900A41214 /* Leader */,
+				659C7E4725F10A2C00A41214 /* Record */,
 				6555388625D44CB800A62FDC /* LaunchScreen.storyboard */,
 				650A69A925D57413003A7604 /* Main.storyboard */,
-				65EFD9FB25DFFE54004A809E /* RecordCell.swift */,
-				65EFD9FC25DFFE54004A809E /* RecordCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,11 +139,8 @@
 		659C4A8725D4699E006ED2CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */,
-				65EFD9C525DF957A004A809E /* RegisterVC.swift */,
-				65EFD9C225DF9558004A809E /* LoginVC.swift */,
-				6555387F25D44CB700A62FDC /* QuizVC.swift */,
-				650A69B925D5A727003A7604 /* ResultVC.swift */,
+				659C7E6125F1128C00A41214 /* Main */,
+				659C7E6025F1127600A41214 /* Auth */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +164,61 @@
 				65EFD9E325DFD8E0004A809E /* Constants.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		659C7E4725F10A2C00A41214 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				65EFD9FB25DFFE54004A809E /* RecordCell.swift */,
+				65EFD9FC25DFFE54004A809E /* RecordCell.xib */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		659C7E4825F10A3900A41214 /* Leader */ = {
+			isa = PBXGroup;
+			children = (
+				659C7E4225F108D000A41214 /* LeaderCell.swift */,
+				659C7E4325F108D000A41214 /* LeaderCell.xib */,
+			);
+			path = Leader;
+			sourceTree = "<group>";
+		};
+		659C7E6025F1127600A41214 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				65EFD9BF25DF91E0004A809E /* WelcomeVC.swift */,
+				65EFD9C525DF957A004A809E /* RegisterVC.swift */,
+				65EFD9C225DF9558004A809E /* LoginVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		659C7E6125F1128C00A41214 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				659C7E6525F112B200A41214 /* FirstTab */,
+				659C7E6425F112AB00A41214 /* SecondTab */,
+				659C7E3B25F0F6EB00A41214 /* TabBarVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		659C7E6425F112AB00A41214 /* SecondTab */ = {
+			isa = PBXGroup;
+			children = (
+				659C7E3F25F0FFC100A41214 /* LeadersVC.swift */,
+			);
+			path = SecondTab;
+			sourceTree = "<group>";
+		};
+		659C7E6525F112B200A41214 /* FirstTab */ = {
+			isa = PBXGroup;
+			children = (
+				6555387F25D44CB700A62FDC /* QuizVC.swift */,
+				650A69B925D5A727003A7604 /* ResultVC.swift */,
+			);
+			path = FirstTab;
 			sourceTree = "<group>";
 		};
 		BA128E24B192F3D233E01D46 /* Frameworks */ = {
@@ -246,6 +306,7 @@
 				65EFD9FE25DFFE54004A809E /* RecordCell.xib in Resources */,
 				6555388825D44CB800A62FDC /* LaunchScreen.storyboard in Resources */,
 				650A69AA25D57413003A7604 /* Main.storyboard in Resources */,
+				659C7E4525F108D000A41214 /* LeaderCell.xib in Resources */,
 				6500F81725E2B20E00188825 /* Righteous-Regular.ttf in Resources */,
 				65EFD9CD25DFACB3004A809E /* GoogleService-Info.plist in Resources */,
 				6500F81425E2B15C00188825 /* Pacifico-Regular.ttf in Resources */,
@@ -303,12 +364,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659C7E3C25F0F6EB00A41214 /* TabBarVC.swift in Sources */,
 				65EFD9C325DF9558004A809E /* LoginVC.swift in Sources */,
 				65EFD9E425DFD8E0004A809E /* Constants.swift in Sources */,
 				65EFD9C625DF957A004A809E /* RegisterVC.swift in Sources */,
+				659C7E4025F0FFC100A41214 /* LeadersVC.swift in Sources */,
 				659C4A8B25D46EA8006ED2CC /* QuizBrain.swift in Sources */,
 				65EFD9C025DF91E0004A809E /* WelcomeVC.swift in Sources */,
 				6555388025D44CB700A62FDC /* QuizVC.swift in Sources */,
+				659C7E4425F108D000A41214 /* LeaderCell.swift in Sources */,
 				650A69C425D66509003A7604 /* Questions.swift in Sources */,
 				650A69BA25D5A727003A7604 /* ResultVC.swift in Sources */,
 				659C4A8325D45B2F006ED2CC /* Question.swift in Sources */,

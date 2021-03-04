@@ -24,7 +24,7 @@ class LoginVC: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-    } 
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,6 +32,11 @@ class LoginVC: UIViewController, UINavigationControllerDelegate {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
         }
         animate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -47,6 +52,8 @@ class LoginVC: UIViewController, UINavigationControllerDelegate {
         }
     }
     
+    // MARK: - UI methods
+    
     func updateUI() {
         loginButton.layer.cornerRadius = 10
         loginButton.titleLabel!.font = UIFont(name: Constants.Fonts.righteous, size: 40)
@@ -56,7 +63,6 @@ class LoginVC: UIViewController, UINavigationControllerDelegate {
         let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
         let fromAnimation2 = AnimationType.vector(CGVector(dx: 60, dy: 0))
         let zoomAnimation = AnimationType.zoom(scale: 2)
-        
         UIView.animate(views: [loginButton], animations: [zoomAnimation, fromAnimation], options: [.curveEaseInOut], completion: nil)
         UIView.animate(views: [emailTextField, passwordTextField], animations: [fromAnimation2], options: [.curveEaseInOut], completion: nil)
     }

@@ -15,8 +15,10 @@ struct Constants{
     static let loginSegue = "LoginToQuiz"
     static let quizSegue = "QuizToResult"
     
-    static let cellIdentifier = "ReusableCell"
-    static let nibName = "RecordCell"
+    static let recordCellIdentifier = "recordCell"
+    static let recordNibName = "RecordCell"
+    static let leaderCellIdentifier = "leaderCell"
+    static let leaderNibName = "LeaderCell"
     
     struct FStore {
         static let collectionName = "results"
